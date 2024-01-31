@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #f2f2f0;
+      }
+      table {
+        width: 60vw;
+        margin: auto;
+        background: seashell;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      button {
+        background: black;
+        color: white;
+        padding: 10px;
+        width: 200px;
+        margin-top: 40px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 18px;
+        font-weight: 800;
+      }
+      th,
+      td {
+        padding: 15px;
+      }
+      thead {
+        background: black;
+        color: white;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Vote Count for {{ajke}}</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Restaurant Name</th>
+          <th>Vote Count</th>
+        </tr>
+      </thead>
+      {%for o,i in finalDict.items%} {% if o.restaurantId == winner %}
+      <tr style="background: rgb(44, 251, 134)">
+        <th>{{o.name}}</th>
+        <th>{{i}}</th>
+      </tr>
+      {%else%}
+      <tr>
+        <th>{{o.name}}</th>
+        <th>{{i}}</th>
+      </tr>
+      {%endif%} {%endfor%}
+    </table>
+    <button onclick="window.location.href='/menu'">Back</button>
+  </body>
+</html>

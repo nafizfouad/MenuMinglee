@@ -304,10 +304,7 @@
               {%for ii in subtype%}
               <div class="column-xs-12 column-md-4">
                 <h4>{{ii.name}}</h4>
-                <p>
-                  Thin base made from crushed biscuits, with a thicker top layer
-                  of soft cheese, eggs and sugar
-                </p>
+                <p>{{ii.desc}}</p>
               </div>
               {%endfor%}
             </section>
@@ -323,8 +320,10 @@
               class="nae"
               onclick="window.location.href='/menu'"
             >
-              Back</button
-            ><button
+              Back
+            </button>
+            {% if checker is 0%}
+            <button
               class="hae"
               type="submit"
               value="{{rest.restaurantId}}"
@@ -332,6 +331,7 @@
             >
               Vote
             </button>
+            {%endif%}
           </form>
         </div>
       </div>

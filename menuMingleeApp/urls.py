@@ -12,7 +12,8 @@ urlpatterns = [
     path('logOut/',views.logOut,name='logOut'),
     path('restaurant/<int:id>/',views.restaurant,name='restaurant'),
     path('allMenu/<int:id>/',views.allMenu,name='allMenu'),
-    path('menu/',views.Menu,name='Menu')
+    path('menu/',views.Menu,name='Menu'),
+    path('winner/',views.winner,name='winner')
 
 
 ]

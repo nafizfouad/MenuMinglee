@@ -156,6 +156,17 @@
           height: 125px;
         }
       }
+      .view {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        width: 350px;
+        padding: 20px;
+        background: salmon;
+        font-size: 18px;
+        font-weight: 800;
+        font-family: "Courier New", Courier, monospace;
+      }
     </style>
     <meta charset="UTF-8" />
     <meta
@@ -166,6 +177,9 @@
     <title>Document</title>
   </head>
   <body>
+    <button class="view" onclick="window.location.href='/winner'">
+      View Vote Count
+    </button>
     <div class="con">
       {%if checker is 1%}
       <form method="POST" enctype="multipart/form-data" class="faForm">

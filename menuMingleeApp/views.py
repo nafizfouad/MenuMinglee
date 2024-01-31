@@ -152,8 +152,14 @@ def Menu(request):
     }
     return render(request,'menu.html',cont)
 def allMenu(request,id):
-
+    user=request.user
+    employee=Employee.objects.get(email=user.email)
+    today=datetime.date.today()
     restaurantDict={}
+    checker=0
+    casted=Vote.objects.filter(date=today,employee=employee)
+    if casted:
+        checker=1
     rest=Restaurant.objects.get(restaurantId=int(id))
     dishes=Dish.objects.filter(restaurant=rest)
     for i in dishes:
@@ -162,8 +168,53 @@ def allMenu(request,id):
         restaurantDict[i.subType.name].append(i)
     if 'back' in request.POST:
         return redirect('/menu')
+    if 'vote' in request.POST:
+        votedRestaurant=Restaurant.objects.get(restaurantId=int(request.POST.get('vote')))
+        se=set()
+        votedList=Vote.objects.filter()
+        for o in votedList:
+            se.add(o.date)
+        size=len(se)
+        ok=Vote.objects.filter(date=today)
+        if not ok:
+            size+=1
+        vote=Vote(
+            vId=size,
+            employee=employee,
+            restaurant=votedRestaurant,
+            date=today
+        )
+        vote.save()
+        return redirect('/menu')
     cont={
         'rest':rest,
-        'restaurantDict':restaurantDict
+        'restaurantDict':restaurantDict,
+        'checker':checker
     }
     return render(request,'allMenu.html',cont)
+def winner(request):
+    today=datetime.date.today()
+    votes=Vote.objects.filter(date=today)
+    queryDict={}
+    for o in votes:
+        queryDict[o.restaurant.restaurantId]=0
+    for o in votes:
+        queryDict[o.restaurant.restaurantId]+=1
+    sortedList=sorted(queryDict.items(), key=lambda x: x[1], reverse=True)
+    winnerRestaurant=sortedList[0][0]
+    if votes and votes[0].vId-2>0:
+        da=Vote.objects.filter(vId=votes[0].vId-2)[0].winner
+        ea=Vote.objects.filter(vId=votes[0].vId-1)[0].winner
+        if da==winnerRestaurant and ea==winnerRestaurant:
+            winnerRestaurant=sortedList[1][0]
+    finalDict={}
+    ajke=datetime.date.today()
+    for o in sortedList:
+        rest=Restaurant.objects.get(restaurantId=o[0])
+        finalDict[rest]=o[1]
+    cont={
+        'finalDict':finalDict,
+        'winner':winnerRestaurant,
+        'ajke':ajke
+    }
+    return render(request,'winner.html',cont)

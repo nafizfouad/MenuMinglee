@@ -1,5 +1,5 @@
 from django.db import models
-
+import datetime
 class Owner(models.Model):
     name=models.CharField(max_length=40,blank=True,null=True)
     email=models.EmailField(max_length=30,blank=True)
@@ -36,6 +36,11 @@ class Dish(models.Model):
     desc=models.CharField(max_length=100,blank=True,null=True,default=None)
     def __str__(self):
         return str(self.name)+" - "+str(self.dishId)
-
-
-
+class Vote(models.Model):
+    vId=models.IntegerField(null=True,blank=True)
+    date=models.DateField(null=True,blank=True)
+    employee=models.ForeignKey(Employee,on_delete=models.CASCADE,null=True)
+    restaurant=models.ForeignKey(Restaurant,on_delete=models.CASCADE,null=True)
+    winner=models.IntegerField(default=0,null=True,blank=True)
+    def __str__(self):
+        return str(self.date)

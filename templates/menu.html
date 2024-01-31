@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+        position: relative;
+      }
       .main {
         display: flex;
         justify-content: center;
@@ -63,12 +67,33 @@
         color: #f47d3b;
         background: transparent;
       }
+      .winner {
+        position: absolute;
+        top: 5%;
+        left: 40%;
+        width: 350px;
+        padding: 20px;
+        background: salmon;
+        font-size: 18px;
+        font-weight: 800;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .winner a {
+        font-size: 20px;
+        font-weight: 800;
+        font-family: "Courier New", Courier, monospace;
+        text-decoration: none;
+        color: black;
+      }
     </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
+    <button class="winner">
+      <a href="/winner">View Vote Count</a>
+    </button>
     <div class="main">
       <h1>Restaurants</h1>
       <div class="container">
