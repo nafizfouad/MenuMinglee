@@ -63,7 +63,8 @@ def logIn(request):
                 loginEmployee=Employee.objects.get(email=request.POST.get('email'))
                 if loginEmployee.password==request.POST.get('pass'):
                     login(request,authenticate(request,username=loginEmployee.username,email=loginEmployee.email,password=loginEmployee.password))
-                    return redirect('/')
+                    redirectURL='/menu'
+                    return redirect(redirectURL)
                 else:
                     messages.error(request,'Passwords do not match !',extra_tags='painai')
 
@@ -116,6 +117,8 @@ def restaurant(request,id):
         checker=1
     if 'submitName' in request.POST:
         restaurant.name=request.POST.get('name')
+        restaurant.desc=request.POST.get('desc')
+        restaurant.image=request.FILES['image']
         restaurant.save()
         redirectURL="/restaurant/"+str(id)
         return redirect(redirectURL)
@@ -127,6 +130,7 @@ def restaurant(request,id):
             name=request.POST.get('name'),
             subType=Type.objects.get(name=request.POST.get('type')),
             price=request.POST.get('price'),
+            desc=request.POST.get('desc'),
             image=request.FILES.get('image')
         )
         newDish.save()
@@ -140,3 +144,26 @@ def restaurant(request,id):
         'menuDict':menuDict
     }
     return render(request,'restaurant.html',cont)
+def Menu(request):
+    restaurantList=Restaurant.objects.filter()
+    print(restaurantList)
+    cont={
+        'restaurantList':restaurantList
+    }
+    return render(request,'menu.html',cont)
+def allMenu(request,id):
+
+    restaurantDict={}
+    rest=Restaurant.objects.get(restaurantId=int(id))
+    dishes=Dish.objects.filter(restaurant=rest)
+    for i in dishes:
+        restaurantDict[i.subType.name]=[]
+    for i in dishes:
+        restaurantDict[i.subType.name].append(i)
+    if 'back' in request.POST:
+        return redirect('/menu')
+    cont={
+        'rest':rest,
+        'restaurantDict':restaurantDict
+    }
+    return render(request,'allMenu.html',cont)

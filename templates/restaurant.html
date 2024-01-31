@@ -16,6 +16,28 @@
         flex-direction: column;
         font-family: "Courier New", Courier, monospace;
       }
+      .faForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        width: 400px;
+        background: whitesmoke;
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+      .faForm > * {
+        width: 300px;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      .faForm button {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 18px;
+        font-weight: 700;
+        background: rgb(37, 230, 120);
+      }
       select {
         width: 320px;
         padding: 10px;
@@ -33,7 +55,7 @@
         flex-direction: column;
         padding: 20px;
         width: 400px;
-        height: 440px;
+        height: 480px;
         background: whitesmoke;
         border-radius: 10px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -109,7 +131,9 @@
         justify-content: space-between;
         margin: 0;
       }
-
+      label {
+        font-weight: 800;
+      }
       .menu-item-name {
         margin-right: 1.5em;
       }
@@ -144,10 +168,14 @@
   <body>
     <div class="con">
       {%if checker is 1%}
-      <form method="POST">
+      <form method="POST" enctype="multipart/form-data" class="faForm">
         {%csrf_token%}
-        <label for="">Enter The Name for your Restaurant</label>
+        <label for="">Name your Restaurant</label>
         <input type="text" name="name" placeholder="Enter Name" />
+        <label for="">Upload An Image</label>
+        <input type="file" name="image" />
+        <textarea name="desc" cols="30" rows="10"></textarea>
+        <label for="">Describe Your Restaurant</label>
         <button type="submit" name="submitName">Submit</button>
       </form>
       {%else%}
@@ -184,6 +212,7 @@
         {%csrf_token%}
         <input type="text" placeholder="Enter Name" name="name" />
         <input type="number" placeholder="Enter Price" name="price" />
+        <input type="text" placeholder="Enter Description" name="desc" />
         <label for="">Submit An Image</label>
         <input type="file" name="image" />
         <label for="">Select Dish Type</label>

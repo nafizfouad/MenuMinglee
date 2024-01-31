@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #f2f2f0;
+        min-height: 100vh;
+      }
+      .main > * {
+        margin-right: 30px;
+        margin-bottom: 30px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        background: whitesmoke;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-right: 30px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      }
+      .card .img img {
+        max-width: 450px;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        margin-right: 30px;
+      }
+      .card p {
+        width: 350px;
+      }
+      .content {
+        padding: 20px;
+      }
+
+      a.btn {
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2.2px;
+        background: black;
+        padding: 10px 40px;
+        border-radius: 50px;
+        color: #fff;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 20px;
+      }
+      a.btn:hover {
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.3);
+        color: #f47d3b;
+        background: transparent;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Restaurants</h1>
+      <div class="container">
+        {%for o in restaurantList%}
+        <div class="card">
+          <div class="img">
+            <img src="{{o.image.url}}" />
+          </div>
+
+          <div class="content">
+            <h1>{{o.name}}</h1>
+            <p>{{o.desc}}</p>
+
+            <div class="buy">
+              <a href="/allMenu/{{o.restaurantId}}" class="btn">View Menu</a>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </body>
+</html>
