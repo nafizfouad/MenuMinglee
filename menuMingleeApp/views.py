@@ -24,6 +24,7 @@ from django.contrib.auth.models import Group,User
 from .models import *
 from django.contrib.auth.decorators import login_required
 def home(request):
+    print(request.user)
     return render(request,'home.html')
 def logIn(request):
     if 'login' in request.POST:
@@ -35,7 +36,23 @@ def logIn(request):
                 loginOwner=Owner.objects.get(email=request.POST.get('email'))
                 if loginOwner.password==request.POST.get('pass'):
                     login(request,authenticate(request,username=loginOwner.username,email=loginOwner.email,password=loginOwner.password))
-                    return redirect('/')
+                    resOwner=Owner.objects.get(email=request.POST.get('email'))
+                    restaurantList=Restaurant.objects.filter(owner=resOwner)
+                    restId=0
+                    if not restaurantList:
+                        length=len(Restaurant.objects.filter())
+                        length+=1
+                        createRestaurant=Restaurant(
+                            owner=resOwner,
+                            restaurantId=length
+                        )
+                        createRestaurant.save()
+                        restId=createRestaurant.restaurantId
+                    else:
+                        getRestaurant=Restaurant.objects.get(owner=resOwner)
+                        restId=getRestaurant.restaurantId
+                    redirectURL="/restaurant/"+str(restId)
+                    return redirect(redirectURL)
                 else:
                     messages.error(request,'Passwords do not match !',extra_tags='painai')
         if request.POST['type']=='2':
@@ -85,3 +102,36 @@ def signUp(request):
 def logOut(request):
     logout(request)
     return redirect('/logIn')
+def restaurant(request,id):
+    restaurant=Restaurant.objects.get(restaurantId=int(id))
+    menuList=Dish.objects.filter(restaurant=restaurant)
+    typeList=Type.objects.filter()
+    checker=0
+    if restaurant.name==None:
+        checker=1
+    if 'submitName' in request.POST:
+        restaurant.name=request.POST.get('name')
+        restaurant.save()
+        redirectURL="/restaurant/"+str(id)
+        return redirect(redirectURL)
+    if 'addDish' in request.POST:
+        dishId=len(Dish.objects.filter())+1
+        newDish=Dish(
+            restaurant=restaurant,
+            dishId=dishId,
+            name=request.POST.get('name'),
+            subType=Type.objects.get(name=request.POST.get('type')),
+            price=request.POST.get('price'),
+
+        )
+        newDish.save();
+        print('hoise')
+        redirectURL="/restaurant/"+str(id)
+        return redirect(redirectURL)
+    cont={
+        "checker":checker,
+        'menuList':menuList,
+        'restaurant':restaurant,
+        'typeList':typeList,
+    }
+    return render(request,'restaurant.html',cont)

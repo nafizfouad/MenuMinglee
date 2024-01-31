@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Dancing+Script:700);
+      @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,400italic);
+      .module-title {
+        font: 700 28px/1.2 "Dancing Script", cursive;
+        margin: 0 0 18px;
+      }
+      body {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Courier New", Courier, monospace;
+      }
+      select {
+        width: 250px;
+        padding: 10px;
+      }
+      option {
+        font-size: 17px;
+        font-weight: 600;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        width: 400px;
+        height: 300px;
+        background: whitesmoke;
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+      .form form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .form form > * {
+        margin-top: 20px;
+      }
+      .form input {
+        width: 300px;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        border: none;
+        margin-top: 20px;
+      }
+      .form button {
+        margin-top: 20px;
+        padding: 10px;
+        width: 200px;
+        font-family: "Courier New", Courier, monospace;
+        background: rgb(36, 241, 125);
+        font-size: 18px;
+        font-weight: 800;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.5em;
+      }
+
+      .menu {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+      }
+
+      .menu-group-heading {
+        margin: 0;
+        padding-bottom: 1em;
+        border-bottom: 2px solid #ccc;
+      }
+
+      .menu-group {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+        padding: 1.5em 0;
+      }
+
+      .menu-item {
+        display: flex;
+      }
+
+      .menu-item-image {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        object-fit: cover;
+        margin-right: 1.5em;
+      }
+
+      .menu-item-text {
+        flex-grow: 1;
+      }
+
+      .menu-item-heading {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+      }
+
+      .menu-item-name {
+        margin-right: 1.5em;
+      }
+
+      .menu-item-description {
+        line-height: 1.6;
+      }
+
+      @media screen and (min-width: 992px) {
+        .menu {
+          font-size: 16px;
+        }
+
+        .menu-group {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .menu-item-image {
+          width: 125px;
+          height: 125px;
+        }
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="con">
+      {%if checker is 1%}
+      <form method="POST">
+        {%csrf_token%}
+        <label for="">Enter The Name for your Restaurant</label>
+        <input type="text" name="name" placeholder="Enter Name" />
+        <button type="submit" name="submitName">Submit</button>
+      </form>
+      {%else%}
+      <h2 class="module-title">Popular Dishes</h2>
+      {%endif%}
+    </div>
+    <div class="container">
+      <div class="menu">
+        <h2 class="menu-group-heading">Entrée</h2>
+        <div class="menu-group">
+          <div class="menu-item">
+            <img
+              class="menu-item-image"
+              src="https://dummyimage.com/600x400/000/fff"
+              alt="Bruschetta"
+            />
+            <div class="menu-item-text">
+              <h3 class="menu-item-heading">
+                <span class="menu-item-name">Bruschetta</span>
+                <span class="menu-item-price">$12.90</span>
+              </h3>
+              <p class="menu-item-description">
+                Nunc efficitur felis vel mi efficitur, sed molestie sem
+                scelerisque. Fusce orci risus, congue eu mauris nec, pretium
+                tincidunt nulla.
+              </p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img
+              class="menu-item-image"
+              src="https://dummyimage.com/600x400/0f0/fff"
+              alt="Bruschetta"
+            />
+            <div class="menu-item-text">
+              <h3 class="menu-item-heading">
+                <span class="menu-item-name">Bruschetta</span>
+                <span class="menu-item-price">$12.90</span>
+              </h3>
+              <p class="menu-item-description">
+                Nunc efficitur felis vel mi efficitur, sed molestie sem
+                scelerisque. Fusce orci risus, congue eu mauris nec, pretium
+                tincidunt nulla.
+              </p>
+            </div>
+          </div>
+        </div>
+        <h2 class="menu-group-heading">Dessert</h2>
+        <div class="menu-group">
+          <div class="menu-item">
+            <img
+              class="menu-item-image"
+              src="https://dummyimage.com/600x400/f00/000"
+              alt="Bruschetta"
+            />
+            <div class="menu-item-text">
+              <h3 class="menu-item-heading">
+                <span class="menu-item-name">Bruschetta</span>
+                <span class="menu-item-price">$12.90</span>
+              </h3>
+              <p class="menu-item-description">
+                Nunc efficitur felis vel mi efficitur, sed molestie sem
+                scelerisque. Fusce orci risus, congue eu mauris nec, pretium
+                tincidunt nulla.
+              </p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img
+              class="menu-item-image"
+              src="https://dummyimage.com/600x400/00f/000"
+              alt="Bruschetta"
+            />
+            <div class="menu-item-text">
+              <h3 class="menu-item-heading">
+                <span class="menu-item-name">Bruschetta</span>
+                <span class="menu-item-price">$12.90</span>
+              </h3>
+              <p class="menu-item-description">
+                Nunc efficitur felis vel mi efficitur, sed molestie sem
+                scelerisque. Fusce orci risus, congue eu mauris nec, pretium
+                tincidunt nulla.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form">
+      <h2>Add A Dish</h2>
+      <form method="POST">
+        {%csrf_token%}
+        <input type="text" placeholder="Enter Name" name="name" />
+        <input type="number" placeholder="Enter Price" name="price" />
+        <label for="">Select Dish Type</label>
+        <select name="type">
+          <option disabled selected></option>
+          {%for o in typeList%}
+          <option value="{{o.name}}">{{o.name}}</option>
+          {%endfor%}
+        </select>
+        <button type="submit" name="addDish">Add</button>
+      </form>
+    </div>
+  </body>
+</html>

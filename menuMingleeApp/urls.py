@@ -9,6 +9,8 @@ urlpatterns = [
     path('',views.home,name='home'),
     path('logIn/',views.logIn,name='logIn'),
     path('signup/',views.signUp,name="signUp"),
-    path('logOut/',views.logOut,name='logOut')
+    path('logOut/',views.logOut,name='logOut'),
+    path('restaurant/<int:id>/',views.restaurant,name='restaurant'),
+
 
 ]
