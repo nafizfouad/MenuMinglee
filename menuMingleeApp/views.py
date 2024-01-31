@@ -107,6 +107,11 @@ def restaurant(request,id):
     menuList=Dish.objects.filter(restaurant=restaurant)
     typeList=Type.objects.filter()
     checker=0
+    menuDict={}
+    for i in typeList:
+        menuDict[i.name]=[]
+    for o in menuList:
+        menuDict[o.subType.name].append(o)
     if restaurant.name==None:
         checker=1
     if 'submitName' in request.POST:
@@ -122,10 +127,9 @@ def restaurant(request,id):
             name=request.POST.get('name'),
             subType=Type.objects.get(name=request.POST.get('type')),
             price=request.POST.get('price'),
-
+            image=request.FILES.get('image')
         )
-        newDish.save();
-        print('hoise')
+        newDish.save()
         redirectURL="/restaurant/"+str(id)
         return redirect(redirectURL)
     cont={
@@ -133,5 +137,6 @@ def restaurant(request,id):
         'menuList':menuList,
         'restaurant':restaurant,
         'typeList':typeList,
+        'menuDict':menuDict
     }
     return render(request,'restaurant.html',cont)

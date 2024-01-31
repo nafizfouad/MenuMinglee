@@ -30,6 +30,7 @@ class Dish(models.Model):
     dishId=models.IntegerField(null=True,default=0)
     name=models.CharField(max_length=40,blank=True,null=True)
     price=models.DecimalField(max_digits=8,decimal_places=2,null=True,default=0.0)
+    image=models.ImageField(upload_to='image/' ,blank=True,null=True)
     def __str__(self):
         return str(self.name)+" - "+str(self.dishId)
 
