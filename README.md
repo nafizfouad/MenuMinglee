@@ -100,7 +100,7 @@ There are two types of users who will be using this system:
   ![Creating Restaurant](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Creating%20Restaurant.jpg)
 - **Uploading Menu:** Restaurants can upload their menus, showcasing the variety of dishes they offer.
 
-![Uploading Menu](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Menu.jpg)
+![Uploading Menu](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Updating%20Menu.jpg)
 
 
 ### Employee Management
