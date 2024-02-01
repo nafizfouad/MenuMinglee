@@ -119,6 +119,7 @@ There are two types of users who will be using this system:
 - **Getting Results:** The app displays the results of the voting process, revealing the winning restaurant and menu for the day.
 - **Anti-Repetition Rule:** To maintain variety, the winner restaurant is restricted from winning for three consecutive working days.
  
+![Vote Results](Screenshot/Authentication Successful.jpg)
 
 ### Logout
 
