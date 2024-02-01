@@ -91,12 +91,7 @@ There are two types of users who will be using this system:
 - Restaurant Owners
 - Employees
 
-   ![Sign In Page](https://drive.google.com/file/d/1nnNDFtZiupBffPMmcIbFQqeZYWrJyw9C/view?usp=drive_link)
   
-<figure>
-  <img src="https://drive.google.com/file/d/1YCermiV0kIm4_OoTLBfzhKDiTQnAqxfP/view?usp=drive_link" alt="Sign Up Page">
-  <figcaption>Signup Page.</figcaption>
-</figure>
 
 
 ### Restaurant Management
@@ -105,41 +100,25 @@ There are two types of users who will be using this system:
 - **Uploading Menu:** Restaurants can upload their menus, showcasing the variety of dishes they offer.
 
 
-<figure>
-  <img src="https://drive.google.com/file/d/1MTV2xQzsw0Mt7159yVsp0yrzzhKhzkvW/view?usp=drive_link" alt="Updating Menu">
-  <figcaption>Updating Menu.</figcaption>
-</figure>
+
 
 
 ### Employee Management
 
 - **Creating Employee:** New employees can be added to the system, allowing them to participate in the voting process.
-<figure>
-  <img src="https://drive.google.com/file/d/1vmLNs9e_IksR1b6_x6mevzmU7oBBpJYt/view?usp=drive_link" alt="Employee Creation Successful">
-  <figcaption>Employee Registration Successful.</figcaption>
-</figure>
+
 
 ### Voting Process
 
 - **Getting Current Day Menu:** Users can view the menus of participating restaurants for the current day.
 - **Voting for Restaurant Menu:** Employees can cast their votes for their preferred dishes and contribute to the decision-making process.
-<figure>
-  <img src="https://drive.google.com/file/d/1-01DaGC4ADplS5O2_yWgf30d73klocAo/view?usp=drive_link" alt="Menu">
-  <figcaption>Restaurant Menu.</figcaption>
-</figure>  
-<figure>
-  <img src="https://drive.google.com/file/d/1_mZwY856LhPZsM7nVy-bk938I1poOsYx/view?usp=drive_link" alt="Voting Process">
-  <figcaption>Voting Process.</figcaption>
-</figure>  
+
 
 ### Results and Restrictions
 
 - **Getting Results:** The app displays the results of the voting process, revealing the winning restaurant and menu for the day.
 - **Anti-Repetition Rule:** To maintain variety, the winner restaurant is restricted from winning for three consecutive working days.
-<figure>
-  <img src="https://drive.google.com/file/d/1BNlOsT8e8enr-o_g2jyTHRanFSYrHx2_/view?usp=drive_link" alt="Vote Result for a day">
-  <figcaption>Vote Result for a day.</figcaption>
-</figure>  
+ 
 
 ### Logout
 
