@@ -25,10 +25,10 @@ Before getting started, ensure you have the following installed on your machine:
 
 3. Create a virtual environment (optional but recommended):
 
-```bash
+    ```bash
 
-   python -m venv venv
-```
+    python -m venv venv
+    ```
 
 4. Activate the virtual environment:
 
@@ -41,38 +41,38 @@ Before getting started, ensure you have the following installed on your machine:
 
     On macOS/Linux:
 
-```bash
+    ```bash
 
     source venv/bin/activate
-```
+    ```
 
 5. Install project dependencies:
 
-```bash
+    ```bash
 
-pip install -r requirements.txt
-```
+    pip install -r requirements.txt
+    ```
 
 6. Apply database migrations:
 
-```bash
+    ```bash
 
-python manage.py migrate
-```
+    python manage.py migrate
+    ```
 
 7. Create a superuser (for Django admin access):
 
-```bash
+   ```bash
 
-python manage.py createsuperuser
-```
+   python manage.py createsuperuser
+   ```
 
 8. Start the development server:
 
-```bash
+   ```bash
 
-python manage.py runserver
-```
+   python manage.py runserver
+   ```
 
 
 
