@@ -116,7 +116,7 @@ For security and user management, the app includes a logout feature to end user 
 
 ## Implementation
 
-The Lunch Voting App is implemented using the Django web framework, providing a scalable and maintainable solution. The app features a clean and intuitive interface, making it easy for both administrators and employees to navigate and participate in the lunch voting process.
+The MenuMinglee Web App is implemented using the Django web framework, providing a scalable and maintainable solution. The app features a clean and intuitive interface, making it easy for both administrators and employees to navigate and participate in the lunch voting process.
 
 
 
