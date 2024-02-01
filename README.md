@@ -90,22 +90,23 @@ The app incorporates robust authentication to secure user accounts and ensure a 
 There are two types of users who will be using this system:
 - Restaurant Owners
 - Employees
-
+![Login Page](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Login%20Page.jpg)
   
-
+![Signup Page](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Signup%20Page.jpg)
 
 ### Restaurant Management
 
 - **Creating Restaurant:** Administrators/restaurant owners can create new restaurants to participate in the lunch voting process.
 - **Uploading Menu:** Restaurants can upload their menus, showcasing the variety of dishes they offer.
 
-
-
+![Creating Restaurant](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Creating%20Restaurant.jpg)
+![Uploading Menu](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Menu.jpg)
 
 
 ### Employee Management
 
 - **Creating Employee:** New employees can be added to the system, allowing them to participate in the voting process.
+ ![Creating Employee Account](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Authentication%20Successful.jpg)
 
 
 ### Voting Process
@@ -113,7 +114,7 @@ There are two types of users who will be using this system:
 - **Getting Current Day Menu:** Users can view the menus of participating restaurants for the current day.
 - **Voting for Restaurant Menu:** Employees can cast their votes for their preferred dishes and contribute to the decision-making process.
 
-  
+  ![Voting Process](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Voting%20Process.jpg)
 
 
 ### Results and Restrictions
