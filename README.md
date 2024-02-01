@@ -90,11 +90,9 @@ The app incorporates robust authentication to secure user accounts and ensure a 
 There are two types of users who will be using this system:
 - Restaurant Owners
 - Employees
+
+   ![Sign In Page](https://drive.google.com/file/d/1nnNDFtZiupBffPMmcIbFQqeZYWrJyw9C/view?usp=drive_link)
   
-<figure>
-  <img src="https://drive.google.com/file/d/1nnNDFtZiupBffPMmcIbFQqeZYWrJyw9C/view?usp=drive_link" alt="Sign In Page">
-  <figcaption>Signin Page.</figcaption>
-</figure>
 <figure>
   <img src="https://drive.google.com/file/d/1YCermiV0kIm4_OoTLBfzhKDiTQnAqxfP/view?usp=drive_link" alt="Sign Up Page">
   <figcaption>Signup Page.</figcaption>
