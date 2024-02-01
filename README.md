@@ -113,13 +113,15 @@ There are two types of users who will be using this system:
 - **Getting Current Day Menu:** Users can view the menus of participating restaurants for the current day.
 - **Voting for Restaurant Menu:** Employees can cast their votes for their preferred dishes and contribute to the decision-making process.
 
+  
+
 
 ### Results and Restrictions
 
 - **Getting Results:** The app displays the results of the voting process, revealing the winning restaurant and menu for the day.
 - **Anti-Repetition Rule:** To maintain variety, the winner restaurant is restricted from winning for three consecutive working days.
  
-![Vote Results](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Authentication%20Successful.jpg)
+![Vote Results](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/.jpg](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Vote%20Count%20of%20a%20particular%20day.jpg)
 
 ### Logout
 
