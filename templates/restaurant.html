@@ -167,6 +167,24 @@
         font-weight: 800;
         font-family: "Courier New", Courier, monospace;
       }
+      .logout {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 200px;
+        padding: 20px;
+        background: black;
+        font-size: 18px;
+        font-weight: 800;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .logout a {
+        font-size: 20px;
+        font-weight: 800;
+        font-family: "Courier New", Courier, monospace;
+        text-decoration: none;
+        color: white;
+      }
     </style>
     <meta charset="UTF-8" />
     <meta
@@ -177,6 +195,9 @@
     <title>Document</title>
   </head>
   <body>
+    <button class="logout">
+      <a href="/logOut">Logout</a>
+    </button>
     <button class="view" onclick="window.location.href='/winner'">
       View Vote Count
     </button>

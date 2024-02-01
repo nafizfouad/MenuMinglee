@@ -212,6 +212,9 @@ def winner(request):
     for o in sortedList:
         rest=Restaurant.objects.get(restaurantId=o[0])
         finalDict[rest]=o[1]
+    for o in votes:
+        o.winner=winnerRestaurant
+        o.save()
     cont={
         'finalDict':finalDict,
         'winner':winnerRestaurant,
