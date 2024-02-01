@@ -136,5 +136,10 @@ For security and user management, the app includes a logout feature to end user 
 
 The MenuMinglee Web App is implemented using the Django web framework, providing a scalable and maintainable solution. The app features a clean and intuitive interface, making it easy for both administrators and employees to navigate and participate in the lunch voting process.
 
+## ER Diagram
+
+The ER Diagram of the project features 6 classes and the relations among them.
+
+![ER Diagram](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/ER%20Diagram.png)
 
 
