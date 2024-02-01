@@ -97,9 +97,9 @@ There are two types of users who will be using this system:
 ### Restaurant Management
 
 - **Creating Restaurant:** Administrators/restaurant owners can create new restaurants to participate in the lunch voting process.
+  ![Creating Restaurant](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Creating%20Restaurant.jpg)
 - **Uploading Menu:** Restaurants can upload their menus, showcasing the variety of dishes they offer.
 
-![Creating Restaurant](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Creating%20Restaurant.jpg)
 ![Uploading Menu](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Menu.jpg)
 
 
@@ -112,6 +112,10 @@ There are two types of users who will be using this system:
 ### Voting Process
 
 - **Getting Current Day Menu:** Users can view the menus of participating restaurants for the current day.
+![Available Restaurants](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Available%20restaurants%20with%20menu.jpg)
+
+   ![Getting Menu](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Menu.jpg)
+   
 - **Voting for Restaurant Menu:** Employees can cast their votes for their preferred dishes and contribute to the decision-making process.
 
   ![Voting Process](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Voting%20Process.jpg)
